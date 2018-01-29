@@ -1,8 +1,8 @@
 CHARLIE Smart Connector for Chiminey
 ==================================
-CHARLIE allows formal model checking of a system modeled as timed petri net. 
+CHARLIE allows formal model checking of a system modeled as petri net. 
 
-Verifying a complex charlie model may become compute-intensive - thus make it a suitable candidate for parallel execution utilising compute resources over the cloud using Chiminey. "CHARLIE Smart Connector for Chiminey" allows parameter sweep i.e. internal sweep and external sweep over charlie perti net models which facilitates scheduling computes over the cloud for parallel execution.
+Verifying a complex charlie model may become compute-intensive - thus make it a suitable candidate for parallel execution utilising compute resources over the cloud using Chiminey. "CHARLIE Smart Connector for Chiminey" allows payload parameter sweep over charlie perti net models which facilitates scheduling computes over the cloud for parallel execution.
 
 Once "CHARLIE Smart Connector" is activated in Chiminey, Chiminey portal then allows to configure and submit a CHARLIE job for execution.
 
@@ -17,7 +17,7 @@ payload_charlie/
 |    |---main.sh
      |---run.sh_template
 ```
-The CHARLIE SC needs to install CHARLIE binary. During activation of CHARLIE SC, the user is required to download appropriate version of charlie and place in the 'package'(https://github.com/alahmedabdullah/charlieconnector/blob/master/SETUP.md) directory.
+The CHARLIE SC needs to install CHARLIE binary. During activation of CHARLIE SC, the user is required to download appropriate version of charlie and place in the 'package' directory of Chiminey install. Please refer to installation steps described in https://github.com/alahmedabdullah/charlieconnector/blob/master/SETUP.md file.
 
 "bootstrap.sh" installs all dependencies required to prepeare job execution environment for CHARLIE. Please note that CHARLIE is installed in "/opt" directory. Following is the content of "bootstrap.sh" for CHARLIE SC:    
 

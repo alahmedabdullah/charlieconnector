@@ -1,5 +1,5 @@
-TINA Connector
-================
+CHARLIE Connector
+=================
 
 Setup
 -----
