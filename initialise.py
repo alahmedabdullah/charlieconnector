@@ -39,7 +39,7 @@ class CharlieInitial(CoreInitial):
     def get_updated_configure_params(self):
         print "\n\nPlease download CHARLIE from http://www-dssz.informatik.tu-cottbus.de/DSSZ/Software/Charlie#downloadCharlie" 
         print "\nRun the GUI installer at a directory of your choice"
-        print "\Create charlie.tar.gz file with charlie.jar, tCharlie.sh and externalpackages directory"
+        print "\nCreate charlie.tar.gz file with charlie.jar, tCharlie.sh and externalpackages directory"
         print "\nPlace the charlie.tar.gz file in ./package directory\n\n"
         
         MESSAGE = "Is charlie.tar.gz (already) available is ./package directory? [Yes/No]"
