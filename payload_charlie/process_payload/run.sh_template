@@ -1,0 +1,13 @@
+#!/bin/sh
+
+INPUT_DIR=$1
+OUTPUT_DIR=$2
+
+java_exe=$(whereis java 2>&1 | awk '/java/ {print $2}')
+java_path=$(dirname $java_exe)
+
+export PATH=$java_path:$PATH
+
+
+/opt/charlie/tCharlie.sh {{cli_parammeters}} >> $OUTPUT_DIR/run.log 
+# --- EOF ---
