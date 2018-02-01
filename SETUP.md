@@ -18,15 +18,15 @@ Setup
 ```
 5. Modify the SMART_CONNECTORES dictionary in settings_change.py file to have following:
 ```
-        'charlie':   {'init': 'chiminey.charlieconnector.initialise.CharlieInitial',
-                      'name': 'charlie',
-                      'description': 'The CHARLIE Petri Net Model Checker',
-                      'payload': '/opt/chiminey/current/chiminey/charlieconnector/payload_charlie'
-                     },
+        'charlie' : {'init': 'chiminey.charlieconnector.initialise.CharlieInitial',
+                     'name': 'charlie',
+                     'description': 'The CHARLIE Petri Net Model Checker',
+                     'payload': '/opt/chiminey/current/chiminey/charlieconnector/payload_charlie'
+                    },
 ```
 6. Modify the INPUT_FIELDS dictionary in settings_change.py file to have following:
 ```
-	'charlie':  SCHEMA_PREFIX + "/input/charlie",
+	'charlie' : SCHEMA_PREFIX + "/input/charlie",
 ```
 7. Clone the git repository https://github.com/alahmedabdullah/charlieconnector.git in /opt/chiminey/current/chiminey
 ```
