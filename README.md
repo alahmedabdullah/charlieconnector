@@ -137,7 +137,7 @@ The Input Directory
 A connector in Chiminey system specifes a 'Input Location' through 'Create Job' tab of the Chimney-Portal. Files located in the 'Input Location' directory is loaded to each VM for cloud execution. The content of 'Input Location' may vary for different runs. Chiminey allows parameteisation of the input envrionment. Any file with '_template' suffix located in the input directory is regarded as template file. Chiminey internally replaces values of the template tags based on the 'payload parameter sweep' provied as Json Dictionary from 'Create Job' tab in the Chiminey portal.
 
 
-The input directory is provied with a default template file 'cli_parameters.txt_template' which is availabe in 'input_charlie' directory of CHARLIE SC install. All the template tags specified in  the cli_parameters.txt_template file will be internally replaced by Chiminey with corresponding values that are passed in from 'Chiminey Portal' as Json dictionary. The 'cli_parameters.txt_template' is  also renamed to 'cli_parameters.txt' with all template tags replaced with corresponding values.
+The input directory is provided with a default template file 'cli_parameters.txt_template' which is availabe in 'input_charlie' directory of CHARLIE SC install. All the template tags specified in  the cli_parameters.txt_template file will be internally replaced by Chiminey with corresponding values that are passed in from 'Chiminey Portal' as Json dictionary. The 'cli_parameters.txt_template' is  also renamed to 'cli_parameters.txt' with all template tags replaced with corresponding values.
 
 For example let us assume following shell command is used to execute a CHARLIE model 'test.andl':
 
@@ -159,7 +159,7 @@ Configure, Create and Execute a CHARLIE Job
 
 Payload Parameter Sweep
 -----------------------
-Payload parameter sweep for 'CHARLIE Smart Connector' in Chiminey System may be performed by specifying appropiate JSON dictionary in 'Payload parameter sweep' field  of the 'sweep_charlie' form. An example JSON dictionary to run internal sweep for the 'train.tpn' could be as following:
+Payload parameter sweep for 'CHARLIE Smart Connector' in Chiminey System may be performed by specifying appropiate JSON dictionary in 'Payload parameter sweep' field  of the 'sweep_charlie' form. An example JSON dictionary to run internal sweep for the 'test.andl' could be as following:
 
 ```
 {"cli_parameters" :  [ "--netfile=test.andl --analyze=pinv --converge=1 --exportFile=result.txt", "--netfile=test.andl --analyze=tinv --deleteTrivial=1 enableMCSC=1  --exportFile=result.txt", "--netfile=test.andl --analyze=pinv --deleteTrivial=1 enableMCSC=1  --exportFile=result.txt" ] }
