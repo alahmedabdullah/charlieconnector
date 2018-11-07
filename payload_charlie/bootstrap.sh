@@ -8,34 +8,23 @@ mv $WORK_DIR/$CHARLIE_PACKAGE_NAME /opt
 cd /opt
 
 # how to get the latest oracle java version ref: https://gist.github.com/n0ts/40dd9bd45578556f93e7
-cd /opt/
-
 ext="tar.gz"
-jdk_version=8
-
-readonly url="http://www.oracle.com"
-
+jdk_version=${1:-8}
+readonly url="https://www.oracle.com"
 readonly jdk_download_url1="$url/technetwork/java/javase/downloads/index.html"
-
-#echo dlurl1=$jdk_download_url1
-
 readonly jdk_download_url2=$(
     curl -s $jdk_download_url1 | \
     egrep -o "\/technetwork\/java/\javase\/downloads\/jdk${jdk_version}-downloads-.+?\.html" | \
-    head -1 | cut -d '"' -f 1
+    head -1 | \
+    cut -d '"' -f 1
 )
-
-#echo dlurl2=$jdk_download_url2
-
 [[ -z "$jdk_download_url2" ]] && echo "Could not get jdk download url - $jdk_download_url1" >> /dev/stderr
 
 readonly jdk_download_url3="${url}${jdk_download_url2}"
-
-#echo dlurl3=$jdk_download_url3
-
-readonly jdk_download_url4=$(curl -s $jdk_download_url3 | egrep -o "http\:\/\/download.oracle\.com\/otn-pub\/java\/jdk\/[7-8]u[0-9]+\-(.*)+\/jdk-[7-8]u[0-9]+(.*)linux-x64.$ext")
-
-#echo dlurl4=$jdk_download_url4
+readonly jdk_download_url4=$(
+    curl -s $jdk_download_url3 | \
+    egrep -o "http\:\/\/download.oracle\.com\/otn-pub\/java\/jdk\/[8-9](u[0-9]+|\+).*\/jdk-${jdk_version}.*(-|_)linux-(x64|x64_bin).$ext"
+)
 
 for dl_url in ${jdk_download_url4[@]}; do
     wget --no-cookies \
@@ -43,7 +32,6 @@ for dl_url in ${jdk_download_url4[@]}; do
          --header "Cookie: oraclelicense=accept-securebackup-cookie" \
          -N $dl_url
 done
-
 JAVA_TARBALL=$(basename $dl_url)
 tar xzfv $JAVA_TARBALL
 
