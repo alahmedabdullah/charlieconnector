@@ -19,6 +19,6 @@ cd $INPUT_DIR
 /opt/charlie/tCharlie.sh $(cat cli_parameters.txt) &> runlog.txt
 
 
-cp ./*.txt ../$OUTPUT_DIR
+cp ./*.txt ./*.ifn ../$OUTPUT_DIR
 
 # --- EOF ---
